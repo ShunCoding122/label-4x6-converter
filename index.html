@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4x6 Label Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>4×6 Shipping Label Converter</h1>
+      <p class="sub">Convert eBay / Canada Post / UPS style PDF labels into a true 4×6 thermal-label PDF directly in your browser.</p>
+
+      <label class="drop" id="dropZone">
+        <input id="fileInput" type="file" accept="application/pdf" />
+        <span class="drop-title">Choose a PDF</span>
+        <span class="drop-sub">or drag and drop it here</span>
+      </label>
+
+      <div class="row">
+        <label for="rotation">Rotation</label>
+        <select id="rotation">
+          <option value="90" selected>90° counter-clockwise</option>
+          <option value="0">No rotation</option>
+          <option value="-90">90° clockwise</option>
+          <option value="180">180°</option>
+        </select>
+      </div>
+
+      <button id="convertBtn" disabled>Convert to 4×6</button>
+      <p id="status" class="status">Select a PDF to begin.</p>
+      <a id="downloadLink" class="download hidden" href="#">Download converted PDF</a>
+
+      <div class="privacy">Your PDF is processed locally in your browser. It is not uploaded to a server.</div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
